@@ -11,7 +11,7 @@ const siteMetadata = {
     email: 'onlinekhabri23@gmail.com',
     twitter: 'https://twitter.com/Online_Khabri',
     threads: 'https://www.threads.net/@online.khabri',
-    youtube: 'https://youtube.com/onlinekhabri',
+    youtube: 'https://www.youtube.com/channel/UC2GY80QJb6nr71GQ-AODnfg',
     instagram: 'https://www.instagram.com/online.khabri?igsh=MTk5cnN1bnA4NW1qaA==',
     locale: 'en-US',
 }
