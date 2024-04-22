@@ -15,7 +15,7 @@ async function handler(req, res) {
         const response = await sheets.spreadsheets.values.append({
             spreadsheetId: "1mf5F7B4PWYaOyT2b1nwV6qqtbwFr1X4vz9hl1VwXBmg",
             range: 'Sheet1!A2:A',
-            valueInputOption: 'USER_ENTERED',
+            valueInputOption: 'RAW',
             requestBody: {
                 values: [[Email]]
             }
