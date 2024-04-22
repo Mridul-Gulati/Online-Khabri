@@ -8,7 +8,7 @@ import InsightRoll from '../About/InsightRoll'
 const HomeCoverSection = ({ blogs }) => {
 
     const sortedBlogs = sortBlogs(blogs)
-    const blog = sortedBlogs[0]
+    const blog = sortedBlogs[6]
     return (
         <div className='w-full inline-block'>
             <InsightRoll insights={["🎉 Subscribe to our FREE Weekly Newsletter to stay updated with the latest trends and news! 🎉"]} />
