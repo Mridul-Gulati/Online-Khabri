@@ -5,7 +5,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import siteMetadata from '../utils/SiteMetadata'
 import ThemeScript from '../components/ThemeScript'
-
+import Script from 'next/script'
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: "--font-in" })
 const manrope = Manrope({ subsets: ['latin'], display: 'swap', variable: "--font-mr" })
 
@@ -50,6 +50,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-R3GEZGPXV0"></Script>
+        <Script id="google-analytics">
+          {`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R3GEZGPXV0');
+  `}
+        </Script>
+      </head>
       <body
         className={cx(inter.variable, manrope.variable, 'font-mr bg-light dark:bg-dark')}>
         <ThemeScript />
