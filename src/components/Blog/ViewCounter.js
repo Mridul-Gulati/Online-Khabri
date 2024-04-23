@@ -53,7 +53,7 @@ const ViewCounter = ({ slug, noCount = false, showCount = true }) => {
 
         return (
             <div>
-                {views / 2} views
+                {views} views
             </div>
         )
     } else {

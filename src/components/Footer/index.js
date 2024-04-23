@@ -14,6 +14,7 @@ const Footer = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const [submissionSuccess, setSubmissionSuccess] = useState(false);
     const [loading, setLoading] = useState(false); // State to handle loading status
+    const [errorMessage, setErrorMessage] = useState('');
 
     function submitHandler(data) {
         setLoading(true);
@@ -26,15 +27,16 @@ const Footer = () => {
         })
             .then(response => {
                 if (response.ok) {
-                    // Success: animate the lottie
                     triggerAnimation();
                     reset();
+                    setErrorMessage(''); // Clear any existing error messages
                 } else {
-                    throw new Error('Network response was not ok.');
+                    throw new Error('Submission failed, please try again.');
                 }
             })
             .catch(error => {
                 console.error('Error submitting form:', error);
+                setErrorMessage(error.message);
             })
             .finally(() => {
                 setLoading(false);
@@ -42,10 +44,10 @@ const Footer = () => {
     }
 
     function triggerAnimation() {
-        setSubmissionSuccess(false); // Ensure the component is reset
+        setSubmissionSuccess(false);
         setTimeout(() => {
             setSubmissionSuccess(true);
-        }, 10); // A short delay to re-trigger the animation
+        }, 10);
     }
 
 
@@ -63,7 +65,9 @@ const Footer = () => {
                 <button type="submit" className="bg-dark dark:bg-light text-light dark:text-dark cursor-pointer font-medium rounded px-3 sm:px-5 py-1" disabled={loading}>
                     {loading ? 'Processing...' : 'Submit'}
                 </button>
-                {/* <input className="bg-dark dark:bg-light text-light dark:text-dark cursor-pointer font-medium rounded px-3 sm:px-5 py-1" type="submit" /> */}
+                {errorMessage && (
+                    <p className="text-red-500 mt-2 text-xs">{errorMessage}</p>
+                )}
             </form>
             {submissionSuccess && (
                 <div className="party-poppers">
