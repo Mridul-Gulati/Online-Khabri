@@ -13,7 +13,10 @@ const LottieAnimationFooter = dynamic(() => import('./lottieAnimation'), {
 const Footer = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const [submissionSuccess, setSubmissionSuccess] = useState(false);
+    const [loading, setLoading] = useState(false); // State to handle loading status
+
     function submitHandler(data) {
+        setLoading(true); // Set loading to true
         fetch("/api/sheet", {
             method: "POST",
             body: JSON.stringify(data),
@@ -24,11 +27,13 @@ const Footer = () => {
             .then(response => {
                 if (response.ok) {
                     setSubmissionSuccess(true); // Set submission success to true
-                    reset();
+                    reset(); // Reset form fields
                 }
             })
-            .catch(error => console.error('Error submitting form:', error));
+            .catch(error => console.error('Error submitting form:', error))
+            .finally(() => setLoading(false)); // Set loading to false regardless of the outcome
     }
+
 
     return (
         <footer id="footer" className='mt-16 rounded-2xl bg-dark dark:bg-accentDark/90 m-2 sm:m-10 flex flex-col items-center text-light dark:text-dark'>
@@ -41,8 +46,10 @@ const Footer = () => {
             </p>
             <form className="mt-6 w-fit sm:min-w-[384px] flex items-stretch bg-light dark:bg-dark p-1 sm:p-2 rounded mx-4" onSubmit={handleSubmit(submitHandler)}>
                 <input type="email" placeholder="Enter your Email" {...register("Email", { required: true })} className='pl-2 sm:pl-0 w-full bg-transparent text-dark dark:text-light focus:border-dark dark:focus:border-light  focus:ring-0 border-0 border-b mr-2 pb-1' />
-
-                <input className="bg-dark dark:bg-light text-light dark:text-dark cursor-pointer font-medium rounded px-3 sm:px-5 py-1" type="submit" />
+                <button type="submit" className="bg-dark dark:bg-light text-light dark:text-dark cursor-pointer font-medium rounded px-3 sm:px-5 py-1" disabled={loading}>
+                    {loading ? 'Processing...' : 'Submit'}
+                </button>
+                {/* <input className="bg-dark dark:bg-light text-light dark:text-dark cursor-pointer font-medium rounded px-3 sm:px-5 py-1" type="submit" /> */}
             </form>
             {submissionSuccess && (
                 <div className="party-poppers">
