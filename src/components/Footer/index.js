@@ -65,10 +65,10 @@ const Footer = () => {
                 <button type="submit" className="bg-dark dark:bg-light text-light dark:text-dark cursor-pointer font-medium rounded px-3 sm:px-5 py-1" disabled={loading}>
                     {loading ? 'Processing...' : 'Submit'}
                 </button>
-                {errorMessage && (
-                    <p className="text-red-500 mt-2 text-xs">{errorMessage}</p>
-                )}
             </form>
+            {errorMessage && (
+                <p className="text-red-500 mt-2 text-xs">{errorMessage}</p>
+            )}
             {submissionSuccess && (
                 <div className="party-poppers">
                     <LottieAnimationFooter />
