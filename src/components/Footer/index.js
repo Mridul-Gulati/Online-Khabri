@@ -16,7 +16,7 @@ const Footer = () => {
     const [loading, setLoading] = useState(false); // State to handle loading status
 
     function submitHandler(data) {
-        setLoading(true); // Set loading to true
+        setLoading(true);
         fetch("/api/sheet", {
             method: "POST",
             body: JSON.stringify(data),
@@ -26,12 +26,26 @@ const Footer = () => {
         })
             .then(response => {
                 if (response.ok) {
-                    setSubmissionSuccess(true); // Set submission success to true
-                    reset(); // Reset form fields
+                    // Success: animate the lottie
+                    triggerAnimation();
+                    reset();
+                } else {
+                    throw new Error('Network response was not ok.');
                 }
             })
-            .catch(error => console.error('Error submitting form:', error))
-            .finally(() => setLoading(false)); // Set loading to false regardless of the outcome
+            .catch(error => {
+                console.error('Error submitting form:', error);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    }
+
+    function triggerAnimation() {
+        setSubmissionSuccess(false); // Ensure the component is reset
+        setTimeout(() => {
+            setSubmissionSuccess(true);
+        }, 10); // A short delay to re-trigger the animation
     }
 
 
