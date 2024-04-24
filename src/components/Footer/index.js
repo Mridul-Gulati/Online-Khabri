@@ -86,6 +86,9 @@ const Footer = () => {
                 <Link href='/sitemap.xml' className='text-center underline my-4 md:my-0'>
                     sitemap.xml
                 </Link>
+                <Link href="/privacy-policy" className='text-center underline my-4 md:my-0'>
+                    Privacy Policy
+                </Link>
                 <div className='text-center'>
                     Made with &hearts; by <a className='underline' href='https://github.com/Mridul-Gulati'>Mridul gulati</a>
                 </div>

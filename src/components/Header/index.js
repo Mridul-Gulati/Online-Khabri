@@ -61,6 +61,7 @@ const Header = () => {
                 <Link href='/' className='mr-3'>Home</Link>
                 <Link href='/about' className='mx-2'>About</Link>
                 <Link href='/contact' className='mx-2'>Contact</Link>
+                <Link href='/categories/all' className='mx-2'>Categories</Link>
                 <button className={cx("w-6 h-6 ease ml-2 flex items-center justify-center rounded-full p-1", mode === "light" ? "bg-dark text-light" : "bg-light text-dark")} onClick={() => setMode(mode === "light" ? "dark" : "light")}>
                     {
                         mode === "dark" ? <SunIcon className={"fill-dark"} /> : <MoonIcon className={"fill-light"} />
