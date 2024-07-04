@@ -7,6 +7,9 @@ import RecentPosts from '../components/Home/RecentPosts'
 export default function Home() {
   console.log(allBlogs)
   return (
+    <head>
+      <meta name="google-site-verification" content="tSN9QlQTTpSHBX0GFUyydWMoTfohHzDQfx_XrBjl2jw" />
+    </head>
     <main className="flex flex-col items-center justify-center">
       <HomeCoverSection blogs={allBlogs} />
       <FeaturedPosts blogs={allBlogs} />
