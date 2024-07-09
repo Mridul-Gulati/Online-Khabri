@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-R3GEZGPXV0');
           `}
         </Script>
-        {/* <Script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></Script>
+        <Script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></Script>
         <Script id="onesignal" strategy="afterInteractive">
           {`
             window.OneSignalDeferred = window.OneSignalDeferred || [];
@@ -69,7 +69,7 @@ export default function RootLayout({ children }) {
               });
             });
           `}
-        </Script> */}
+        </Script>
       </head>
       <body
         className={cx(inter.variable, manrope.variable, 'font-mr bg-light dark:bg-dark')}>
