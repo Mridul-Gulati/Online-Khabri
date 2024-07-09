@@ -80,7 +80,7 @@ const Footer = () => {
                 <a href={siteMetadata.twitter} className='inline-block w-6 h-6 mr-4'><TwitterIcon className="hover:scale-125 transition-all ease duration-200" /></a>
                 <a href={siteMetadata.youtube} className='inline-block mb-3 h-8 mr-4 fill-light dark:fill-none'><YouTubeIcon2 className="hover:scale-125 transition-all ease duration-200" /></a>
             </div>
-
+            <div class='onesignal-customlink-container'></div>
             <div className='w-full mt-16 md:mt-24 relative font-medium border-t border-solid border-light py-6 px-8 flex flex-col md:flex-row items-center justify-between'>
                 <span className='text-center'>&copy;{new Date().getFullYear()} Online Khabri. All rights reserved.</span>
                 <Link href='/sitemap.xml' className='text-center underline my-4 md:my-0'>

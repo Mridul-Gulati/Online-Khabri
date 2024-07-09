@@ -22,6 +22,7 @@ const RecentPosts = ({ blogs }) => {
                     })
                 }
             </div>
+            <div class='onesignal-customlink-container'></div>
         </section>
     )
 }
