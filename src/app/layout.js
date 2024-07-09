@@ -57,7 +57,7 @@ export default function RootLayout({ children }) {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-R3GEZGPXV0');
-  `}
+          `}
         </Script>
         <Script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></Script>
         <Script id="onesignal" strategy="afterInteractive">
