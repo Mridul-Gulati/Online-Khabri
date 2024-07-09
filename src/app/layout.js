@@ -61,16 +61,6 @@ export default function RootLayout({ children }) {
   gtag('config', 'G-R3GEZGPXV0');
   `}
         </Script>
-        <Script async src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></Script>
-        <Script>{`
-    window.OneSignalDeferred = window.OneSignalDeferred || [];
-    OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "660d5964-dcf7-44b7-8345-13544b9f2474",
-    });
-  });
-  `}
-        </Script>
       </head>
       <body
         className={cx(inter.variable, manrope.variable, 'font-mr bg-light dark:bg-dark')}>
