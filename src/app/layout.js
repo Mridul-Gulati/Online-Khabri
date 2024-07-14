@@ -70,6 +70,7 @@ export default function RootLayout({ children }) {
             });
           `}
         </Script>
+        <meta name="p:domain_verify" content="fb054212a21f7553ec2037193c91325e" />
       </head>
       <body
         className={cx(inter.variable, manrope.variable, 'font-mr bg-light dark:bg-dark')}>
