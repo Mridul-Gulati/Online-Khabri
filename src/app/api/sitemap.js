@@ -42,10 +42,11 @@ function generateSiteMap(blogPosts) {
 }
 
 export async function getServerSideProps() {
-    const blogPosts = allBlogs.map((blog) => ({
+    // Ensure allBlogs is defined and not empty
+    const blogPosts = allBlogs ? allBlogs.map((blog) => ({
         slug: slug(blog.title),
         date: blog.date,
-    }));
+    })) : [];
 
     return {
         props: {
@@ -55,6 +56,14 @@ export async function getServerSideProps() {
 }
 
 export default function Sitemap({ blogPosts }) {
+    if (!blogPosts || blogPosts.length === 0) {
+        return new Response('<xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>', {
+            headers: {
+                'Content-Type': 'application/xml',
+            },
+        });
+    }
+
     const sitemap = generateSiteMap(blogPosts);
 
     return new Response(sitemap, {
