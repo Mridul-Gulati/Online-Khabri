@@ -8,8 +8,8 @@ import ThemeScript from '../components/ThemeScript'
 import Script from 'next/script'
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: "--font-in" })
 const manrope = Manrope({ subsets: ['latin'], display: 'swap', variable: "--font-mr" })
-import AmazonPromo from '../components/AmazonCard'
 import { MDXProvider } from "@mdx-js/react"
+import AmazonProductCard from '../components/AmazonCard'
 
 export const metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
@@ -76,11 +76,12 @@ export default function RootLayout({ children }) {
       </head>
       <body
         className={cx(inter.variable, manrope.variable, 'font-mr bg-light dark:bg-dark')}>
-        <MDXProvider components={{ AmazonPromo }}>{children}</MDXProvider>
-        <ThemeScript />
-        <Header />
-        {children}
-        <Footer />
+        <MDXProvider components={{ AmazonProductCard }}>
+          <ThemeScript />
+          <Header />
+          {children}
+          <Footer />
+        </MDXProvider>
       </body>
     </html>
   )

@@ -38,6 +38,7 @@
     "remark-gfm": "^3.0.1",
     "rsuite": "^5.59.2",
     "shiki": "^0.14.3",
+    "styled-components": "^6.1.13",
     "tailwindcss": "3.3.3"
   },
   "devDependencies": {
