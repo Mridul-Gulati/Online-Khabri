@@ -8,7 +8,7 @@ import ThemeScript from '../components/ThemeScript'
 import Script from 'next/script'
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: "--font-in" })
 const manrope = Manrope({ subsets: ['latin'], display: 'swap', variable: "--font-mr" })
-import { AmazonPromo } from '../components/AmazonCard'
+import AmazonPromo from '../components/AmazonCard'
 import { MDXProvider } from "@mdx-js/react"
 
 export const metadata = {
