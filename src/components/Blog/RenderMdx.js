@@ -2,10 +2,11 @@
 import React from 'react'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Image from 'next/image'
-
+import AmazonProductCard from '../AmazonCard'
 
 const mdxComponents = {
-    Image
+    Image,
+    AmazonProductCard
 }
 
 const RenderMdx = ({ blog }) => {
